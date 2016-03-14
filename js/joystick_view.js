@@ -73,8 +73,7 @@ JoystickView = Backbone.View.extend({
         this.state = INACTIVE;
         this.x = 0;
         this.y = 0;
-        var xVal=0;
-        var yVal=0;
+        
         this.renderSprite();
     },
     move: function(evt){
@@ -138,6 +137,8 @@ JoystickView = Backbone.View.extend({
 
         var xSign = 1;
         var ySign = 1;
+        var xVal = 0;
+        var yVal = 0;
 
         if(this.x != 0){
             xSign = this.x / Math.abs(this.x);
