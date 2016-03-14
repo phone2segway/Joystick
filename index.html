@@ -4,6 +4,29 @@
         <script type="text/javascript" src="js/underscore-min.js"></script>
         <script type="text/javascript" src="js/backbone-min.js"></script>
         <script type="text/javascript" src="js/joystick_view.js"></script>
+        
+         <script>
+      // If we're running on a real web server (as opposed to localhost, which is whitelisted),
+      // then change the protocol to HTTPS.
+      // See https://goo.gl/lq4gCo for an explanation as to why this is needed for some features.
+      (function() {
+        var isLocalhost = !!(window.location.hostname === 'localhost' ||
+          // [::1] is the IPv6 localhost address.
+          window.location.hostname === '[::1]' ||
+          // 127.0.0.1/8 is considered localhost for IPv4.
+          window.location.hostname.match(/^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/));
+        if (window.location.protocol === 'http:' && !isLocalhost) {
+          // Redirect to https: if we're currently using http: and we're not on localhost.
+          window.location.protocol = 'https:';
+        }
+      })();
+      window.addEventListener('error', function(error) {
+        if (ChromeSamples && ChromeSamples.setStatus) {
+          ChromeSamples.setStatus(error.message + ' (Nettleseren din støtter ikke Web Bluetooth.)');
+          error.preventDefault();
+        }
+      });
+    </script>
     </head>
     <body>
 
@@ -35,5 +58,11 @@
             });
         });
     </script>
+    <form>
+		  <div><label for="service">Service: </label><input id="service" type="text" list="services" autofocus placeholder="Bluetooth Service" value="6e400001-b5a3-f393-e0a9-e50e24dcca9e"></div>
+		  <div><label for="service">Characteristic: </label><input id="characteristic" type="text" list="characteristics" placeholder="Bluetooth Characteristic" value="6e400002-b5a3-f393-e0a9-e50e24dcca9e"></div>
+	       
+		  <div><button id="connect" >Koble til enhet</button></div>
+		</form>
     </body>
 </html>
