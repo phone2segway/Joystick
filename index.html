@@ -100,22 +100,7 @@
 		  <br><div><button id="connect" >Koble til enhet</button></div></br>
 		</form>
 		
-  
-   <script>
-   document.querySelector('form').addEventListener('submit', function(event) {
-    event.stopPropagation();
-    event.preventDefault();
-    if (!navigator.bluetooth) {
-      ChromeSamples.setStatus('Web Bluetooth API er ikke tilgjengelig.\n' +
-        'Husk å aktivere Web Bluetooth-flagget: chrome://flags');
-    } else {
-      ChromeSamples.clearLog();
-      onFormSubmit();
-    }
-  });
-  log = ChromeSamples.log;
- </script>
-    
+ 
     
     </body>
 </html>
