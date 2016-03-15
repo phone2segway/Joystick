@@ -179,6 +179,21 @@ button {
 					log('Feil ' + error);
 				  });
 				}
+				
+				function joystickContent() {
+				  'use strict';
+
+				
+					if(myCharacteristic) {
+						log('> kjører');
+						let Tall = new Uint8Array([xVal], [240]);
+						
+						myCharacteristic.writeValue(Tall);
+						
+					}
+				
+				};
+				
 				</script>
 	<script>
   document.querySelector('form').addEventListener('submit', function(event) {
