@@ -182,11 +182,11 @@ JoystickView = Backbone.View.extend({
         return Math.pow(x, 2) + Math.pow(y, 2) > Math.pow(this.radius, 2);
     },
     renderSprite: function(){
-        var originalWidth = 178;
-        var originalHeight = 178;
+        var originalWidth = 89; //bakgrunnsbilde
+        var originalHeight =89; //bakgrunnsbilde
 
-        var spriteWidth = 50;
-        var spriteHeight = 50;
+        var spriteWidth = 50; // knapp
+        var spriteHeight = 50; // knapp
         var pixelsLeft = 0; //ofset for sprite on img
         var pixelsTop = 0; //offset for sprite on img
         var coords = this._cartesianToCanvas(this.x, this.y);
