@@ -185,8 +185,8 @@ JoystickView = Backbone.View.extend({
         var originalWidth = 89;
         var originalHeight = 89;
 
-        var spriteWidth = 100;
-        var spriteHeight = 100;
+        var spriteWidth = 50;
+        var spriteHeight = 50;
         var pixelsLeft = 0; //ofset for sprite on img
         var pixelsTop = 0; //offset for sprite on img
         var coords = this._cartesianToCanvas(this.x, this.y);
@@ -196,7 +196,7 @@ JoystickView = Backbone.View.extend({
         // hack dunno why I need the 2x
         this.context.clearRect(0, 0, this.squareSize * 2, this.squareSize);
 
-        var backImageSize = 300;
+        var backImageSize = 600;
         this.context.drawImage(this.background,
             0,
             0,
