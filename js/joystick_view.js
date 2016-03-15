@@ -179,8 +179,8 @@ JoystickView = Backbone.View.extend({
         return Math.pow(x, 2) + Math.pow(y, 2) > Math.pow(this.radius, 2);
     },
     renderSprite: function(){
-        var originalWidth = 89; //bakgrunnsbilde
-        var originalHeight =89; //bakgrunnsbilde
+        var originalWidth = 178; //bakgrunnsbilde
+        var originalHeight =178; //bakgrunnsbilde
 
         var spriteWidth = 50; // knapp
         var spriteHeight = 50; // knapp
@@ -193,7 +193,7 @@ JoystickView = Backbone.View.extend({
         // hack dunno why I need the 2x
         this.context.clearRect(0, 0, this.squareSize * 2, this.squareSize);
 
-        var backImageSize = 300;
+        var backImageSize = 600;
         this.context.drawImage(this.background,
             0,
             0,
