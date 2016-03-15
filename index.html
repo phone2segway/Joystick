@@ -1,6 +1,9 @@
 <html>
    
     	<head>
+    		
+    	<meta name="viewport" content="width=device-width" />	
+    		
          <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
         <script type="text/javascript" src="js/underscore-min.js"></script>
         <script type="text/javascript" src="js/backbone-min.js"></script>
@@ -31,6 +34,19 @@
     
     </head>
     <body>
+
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+
+     #content{
+          width: 100%;
+     }
+
+img{
+          max-width:100%;
+          height:auto;
+     }
+
+}
 
    <center> <script type="text/html" id="joystick-view"> </center>
    <canvas id="joystickCanvas" width="<%= squareSize %>" height="<%= squareSize %>" style="width: <%= squareSize %>px; height: <%= squareSize %>px;">
