@@ -196,7 +196,7 @@ JoystickView = Backbone.View.extend({
         // hack dunno why I need the 2x
         this.context.clearRect(0, 0, this.squareSize * 2, this.squareSize);
 
-        var backImageSize = 600;
+        var backImageSize = 150;
         this.context.drawImage(this.background,
             0,
             0,
