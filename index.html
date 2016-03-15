@@ -187,7 +187,7 @@ button {
 
 					if(myCharacteristic) {
 						log('> Kjører');
-						let Tall = new Uint8Array([yVal],[xVal], [240]);
+						let Tall = new Uint8Array([xVal], [240]);
 						
 						return myCharacteristic.writeValue(Tall);
 					
