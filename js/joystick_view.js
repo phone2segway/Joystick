@@ -134,8 +134,8 @@ JoystickView = Backbone.View.extend({
         var percentLoss = 0.1;
         var toKeep = 1.0 - percentLoss;
 
-        var xSign = 1;
-        var ySign = 1;
+        var xSign = 0;
+        var ySign = 0;
 
         if(this.x != 0){
             xSign = this.x / Math.abs(this.x);
