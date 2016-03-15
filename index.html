@@ -180,6 +180,24 @@ button {
 					log('Feil ' + error);
 				  });
 				}
+				
+				
+				function joystickContent() {
+					'use strict';
+
+					if(myCharacteristic) {
+						log('> Kjører');
+						let Tall = new Uint8Array([yVal],[xVal], [240]);
+						
+						return myCharacteristic.writeValue(Tall);
+					
+					//	.then(function(myCharacteristic) {return myCharacteristic.writeValue(100);})	
+					}
+				
+				};
+				
+				
+				
 				</script>
 	<script>
   document.querySelector('form').addEventListener('submit', function(event) {
