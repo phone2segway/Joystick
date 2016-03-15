@@ -182,8 +182,8 @@ JoystickView = Backbone.View.extend({
         return Math.pow(x, 2) + Math.pow(y, 2) > Math.pow(this.radius, 2);
     },
     renderSprite: function(){
-        var originalWidth = 100;
-        var originalHeight = 100;
+        var originalWidth = 200;
+        var originalHeight = 200;
 
         var spriteWidth = 50;
         var spriteHeight = 50;
