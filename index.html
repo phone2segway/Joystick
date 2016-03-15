@@ -182,12 +182,12 @@ button {
 				}
 				
 				
-				function joystickView() {
+				if xVal=1{
 					'use strict';
 
 					if(myCharacteristic) {
 						log('> Kjører');
-						let Tall = new Uint8Array([xVal], [240]);
+						let Tall = new Uint8Array([1], [240]);
 						
 						return myCharacteristic.writeValue(Tall);
 					
