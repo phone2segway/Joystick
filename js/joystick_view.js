@@ -82,7 +82,7 @@ JoystickView = Backbone.View.extend({
         }
         this.lastTouch = new Date().getTime();
 
-        var x, y;
+        var Math.round(x*100)/100, Math.round(y*100)/100;
 
 
         if(evt.originalEvent && evt.originalEvent.touches){
