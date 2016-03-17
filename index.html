@@ -96,8 +96,9 @@ button {
     </div>
     <div>
       
+      <center>  x: <span id="xVal"></span><br/></center>
       <center>  y: <span id="yVal"></span><br/></center>
-      <center>  ingar: <span id="xVal"></span><br/></center>
+      
    
       
       
@@ -125,7 +126,7 @@ button {
             });
             joystickView.bind("horizontalMove", function(x){
                 $("#xVal").html(x);
-                xVal = x;
+                xVal = x*100;
             });
         });
         
