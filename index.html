@@ -146,7 +146,7 @@ button {
                 	yVal = 0;
                 	
                 distance = Math.round(Math.sqrt ((xVal * xVal) + (yVal * yVal)), 1);
-                angle = Math.round(Math.acos(xVal / distance), 1);
+                angle = Math.round(Math.acos(xVal / distance)*180/Math.PI, 1);
                 
         
         	console.log ('x-verdi: ' + xVal);
