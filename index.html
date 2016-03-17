@@ -157,12 +157,13 @@ button {
         	$('#angle').html(angle);
         	$('#distance').html(distance);
         	$('#xP').html(xVal + "%");
+        	$('#yP').html(yVal + "%");
         });
         $('#joystickContent').on('touchend mouseup', function() {
            xVal = 0;
            yVal = 0;
            $('#xP').html(xVal + "%");
-            $('#xP').html(yVal + "%");
+           $('#yP').html(yVal + "%");
         });	
     </script>
     	
