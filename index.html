@@ -138,6 +138,10 @@ button {
         	console.log('y-verdi: ' + yVal);
         	$('#xP').html(xVal + "%");
         });
+        $('#joystickContent').on('touchend mouseup', function() {
+           xVal = 0;
+           $('#xP').html(xVal + "%");
+        });	
     </script>
     	
       		<form>
