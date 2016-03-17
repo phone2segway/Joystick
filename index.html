@@ -129,7 +129,7 @@ button {
             });
             joystickView.bind("horizontalMove", function(x){
                 $("#xVal").html(x);
-                if (x === "undefined")
+                if (x === undefined || x=== null)
                 	xVal = 0;
                 else
                 	xVal = Math.floor(x*100);
