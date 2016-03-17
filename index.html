@@ -122,17 +122,17 @@ button {
             });
             joystickView.bind("verticalMove", function(y){
                 $("#yVal").html(y);
-                yVal = y;
+                yVal = Math.floor( y*100);
             });
             joystickView.bind("horizontalMove", function(x){
                 $("#xVal").html(x);
-                xVal = x;
+                xVal = Math.floor(x*100);
             });
         });
         
         $('#joystickContent').on('touchmove mousemove', function() {
-        	console.log ('x-verdi: ' + Math.floor( xVal*100));
-        	console.log('y-verdi: ' + Math.floor(yVal*100));
+        	console.log ('x-verdi: ' + xVal);
+        	console.log('y-verdi: ' + yVal);
         });
     </script>
     	
