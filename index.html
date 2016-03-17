@@ -103,17 +103,19 @@ button {
       
     </div>
     
-    <sript>
-    	document.getElementById("xVal").innerHTML = xprosent;
-    	</sript>
+  
+    	
+    	
 
 
     <script type="text/javascript">
+    
     	var xVal;
     	var yVal;
     	var xprosent = Math.floor( xVal*100) ;
     	var yprosent;
     	
+    	document.getElementById("xVal").innerHTML = xprosent;
     	
         $(document).ready(function(){
             var joystickView = new JoystickView(300, function(callbackView){
