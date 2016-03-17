@@ -95,10 +95,10 @@ button {
     <div id="joystickContent">
     </div>
     <div>
-      
+     
       <center>  x: <span id="xVal"></span><br/></center>
       <center>  y: <span id="yVal"></span><br/></center>
-      <center>  xprosent: <span id="xP"></span><br/></center>
+      <center>  xprosent: <span id="xP"></span><br/></center>     
       <center>  yprosent: <span id="yP"></span><br/></center>
       <center>  Distance: <span id="distance"></span><br/></center>
       <center>  Angle: <span id="angle"></span><br/></center>
@@ -112,58 +112,58 @@ button {
   
       <script type="text/javascript">
     
-    	var xVal;
-    	var yVal;
-    	var distance;
-    	var angle;
-   
+    	var xVal;     // gjør variblene til en globalverdi
+    	var yVal;      // gjør variblene til en globalverdi
+    	var distance;    // gjør variblene til en globalverdi
+    	var angle;        // gjør variblene til en globalverdi
+     
     	
     	
     	
         $(document).ready(function(){
-            var joystickView = new JoystickView(300, function(callbackView){
+            var joystickView = new JoystickView(300, function(callbackView){     // størelsen på bakre bilde = 300
                 $("#joystickContent").append(callbackView.render().el);
                 setTimeout(function(){
                     callbackView.renderSprite();
                 }, 0);
             });
             joystickView.bind("verticalMove", function(y){
-                $("#yVal").html(y);
-                yVal = Math.floor( y*100);
+                $("#yVal").html(y);        // lager en id og skriver ut verdiene.
+                yVal = Math.floor( y*100); // gjør om yVal verdien til prosent
             });
             joystickView.bind("horizontalMove", function(x){
-                $("#xVal").html(x);
+                $("#xVal").html(x);        // lager en id og skriver ut verdiene
                 
-               	xVal = Math.floor(x*100);
+               	xVal = Math.floor(x*100);   // gjør om xVal verdien til prosent
             });
         });
         
         $('#joystickContent').on('touchmove mousemove', function() {
         
-        	 if (xVal== null)
+        	 if (xVal== null)       // setter xVal = 0 før vi bruker joystick
                 	xVal = 0;
-                 if (yVal== null)
-                	yVal = 0;
+                 if (yVal== null)        // setter yVal = 0 før vi bruker joystick
+                	yVal = 0;    
                 	
-                distance = Math.round(Math.sqrt ((xVal * xVal) + (yVal * yVal)), 1);
-                angle = Math.round(Math.acos(xVal / distance)*180/Math.PI, 1);
+                distance = Math.round(Math.sqrt ((xVal * xVal) + (yVal * yVal)), 1);   // regner ut avstand fra senter
+                angle = Math.round(Math.acos(xVal / distance)*180/Math.PI, 1);         // regner ut vinkelen
                 if (yVal < 0)
-                	angle = 360 - angle;
+                	angle = 360 - angle;                                          // for å få skalaen fra 0 til 360
                 
         
-        	console.log ('x-verdi: ' + xVal);
-        	console.log('y-verdi: ' + yVal);
+        	console.log ('x-verdi: ' + xVal);      // viser xVal på console
+        	console.log('y-verdi: ' + yVal);          // viser yVal på console
         	
-        	$('#angle').html(angle);
-        	$('#distance').html(distance);
-        	$('#xP').html(xVal + "%");
-        	$('#yP').html(yVal + "%");
+        	$('#angle').html(angle);         // Lager id og viser verdiene
+        	$('#distance').html(distance);   // Lager id og viser verdiene
+        	$('#xP').html(xVal + "%");       // Lager id og viser verdiene
+        	$('#yP').html(yVal + "%");       // Lager id og viser verdiene
         });
         $('#joystickContent').on('touchend mouseup', function() {
-           xVal = 0;
-           yVal = 0;
-           $('#xP').html(xVal + "%");
-           $('#yP').html(yVal + "%");
+           xVal = 0;                      // setter xVal = 0 når vi slipper joystick
+           yVal = 0;                         // setter yVal = 0 når vi slipper joystick
+           $('#xP').html(xVal + "%");     //lager id og henter verdi
+           $('#yP').html(yVal + "%");        //lager id og henter verdi
         });	
     </script>
     	
