@@ -97,6 +97,7 @@ button {
     <div>
       <center>  x: <span id="xVal"></span><br/></center>
       <center>  y: <span id="yVal"></span><br/></center>
+      
      
     
       
@@ -110,6 +111,7 @@ button {
     	var yVal;
     	
     	
+    	
         $(document).ready(function(){
             var joystickView = new JoystickView(300, function(callbackView){
                 $("#joystickContent").append(callbackView.render().el);
@@ -119,7 +121,7 @@ button {
             });
             joystickView.bind("verticalMove", function(y){
                 $("#yVal").html(y);
-                yVal = y;
+                yVal = y*100;
             });
             joystickView.bind("horizontalMove", function(x){
                 $("#xVal").html(x);
