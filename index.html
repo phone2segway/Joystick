@@ -96,7 +96,7 @@ button {
     <div>
       <center>  x: <span id="xVal"></span><br/></center>
       <center>  y: <span id="yVal"></span><br/></center>
-      <center>  ingar: <span id="xVal"></span><br/></center>
+      <center>  ingar: <span (this.squareSize)></span><br/></center>
       <center>  an: <span id="yVal"></span><br/></center>
     </div>
 
@@ -110,7 +110,7 @@ button {
                 }, 0);
             });
             joystickView.bind("verticalMove", function(y){
-                $("#yVal").html(y);
+                $("#yVal").html(y); 
             });
             joystickView.bind("horizontalMove", function(x){
                 $("#xVal").html(x);
