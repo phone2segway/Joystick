@@ -145,13 +145,14 @@ button {
                  if (yVal== null)
                 	yVal = 0;
                 	
-                distance = Math.sqrt ((xVal * xVal) + (yVal * yVal));
-                
+                distance = Math.round(Math.sqrt ((xVal * xVal) + (yVal * yVal)), 1);
+                angle = Math.round(Math.acos(xVal / distance), 1);
                 
         
         	console.log ('x-verdi: ' + xVal);
         	console.log('y-verdi: ' + yVal);
         	
+        	$('#angle').html(angle);
         	$('#distance').html(distance);
         	$('#xP').html(xVal + "%");
         });
