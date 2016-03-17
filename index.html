@@ -100,6 +100,8 @@ button {
       <center>  y: <span id="yVal"></span><br/></center>
       <center>  xprosent: <span id="xP"></span><br/></center>
       <center>  yprosent: <span id="yP"></span><br/></center>
+      <center>  Distance: <span id="distance"></span><br/></center>
+      <center>  Angle: <span id="angle"></span><br/></center>
       
       
    
@@ -112,6 +114,8 @@ button {
     
     	var xVal;
     	var yVal;
+    	var distance;
+    	var angle;
    
     	
     	
@@ -136,14 +140,19 @@ button {
         
         $('#joystickContent').on('touchmove mousemove', function() {
         
-        	 if (xVal === undefined || xVal== null)
+        	 if (xVal== null)
                 	xVal = 0;
-                 
+                 if (yVal== null)
+                	yVal = 0;
+                	
+                distance = Math.sqrt ((xVal * xVal) + (yVal * yVal));
+                
+                
         
         	console.log ('x-verdi: ' + xVal);
         	console.log('y-verdi: ' + yVal);
         	
-        	
+        	$('#distance').html(distance);
         	$('#xP').html(xVal + "%");
         });
         $('#joystickContent').on('touchend mouseup', function() {
