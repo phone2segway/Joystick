@@ -59,7 +59,7 @@ button {
         <script type="text/javascript" src="js/joystick_view.js"></script>
         
          <script>
-         var K = xVal * 100;
+         
          
       // If we're running on a real web server (as opposed to localhost, which is whitelisted),
       // then change the protocol to HTTPS.
@@ -99,7 +99,7 @@ button {
       <center>  y: <span id="yVal"></span><br/></center>
       
       
-      <center>  ingar: <span id="x"></span><br/></center>
+      <center>  ingar: <span id="K"></span><br/></center>
       <center>  an: <span id="yVal"></span><br/></center>
     </div>
 
@@ -114,6 +114,7 @@ button {
             });
             joystickView.bind("verticalMove", function(y){
                 $("#yVal").html(y); 
+                console.log("y-verdi: " + y);
             });
             joystickView.bind("horizontalMove", function(x){
                 $("#xVal").html(x);
