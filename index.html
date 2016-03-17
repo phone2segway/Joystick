@@ -98,6 +98,9 @@ button {
       
       <center>  x: <span id="xVal"></span><br/></center>
       <center>  y: <span id="yVal"></span><br/></center>
+      <center>  xprosent: <span id="xP"></span><br/></center>
+      <center>  yprosent: <span id="yP"></span><br/></center>
+      
       
    
       
@@ -133,6 +136,7 @@ button {
         $('#joystickContent').on('touchmove mousemove', function() {
         	console.log ('x-verdi: ' + xVal);
         	console.log('y-verdi: ' + yVal);
+        	$('#xP').html(xVal + "%");
         });
     </script>
     	
