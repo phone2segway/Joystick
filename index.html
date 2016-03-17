@@ -97,7 +97,7 @@ button {
     <div>
       <center>  x: <span id="xVal"></span><br/></center>
       <center>  y: <span id="yVal"></span><br/></center>
-      <center>  ingar: ('x-verdi: ' + Math.floor( xVal*100))<br/></center>
+      <center>  ingar: <span id="xprosent"></span><br/></center>
       <center>  an: <span id=joystickContent">"yVal*100"></span><br/></center>
       
       
@@ -107,6 +107,8 @@ button {
     <script type="text/javascript">
     	var xVal;
     	var yVal;
+    	var xprosent = Math.floor( xVal*100) ;
+    	var yprosent;
     	
     	
         $(document).ready(function(){
