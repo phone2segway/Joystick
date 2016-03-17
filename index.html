@@ -119,7 +119,7 @@ button {
                     callbackView.renderSprite();
                 }, 0);
             });
-            joystickView.bind("verticalMove", function(Math.floor(y*100){
+            joystickView.bind("verticalMove", function(y){
                 $("#yVal").html(y);
                 yVal = y;
             });
