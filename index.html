@@ -113,7 +113,7 @@ button {
             });
             joystickView.bind("verticalMove", function(y){
                 $("#yVal").html(y); 
-                console.log("y-verdi: " + y);
+                console.log("y-verdi: " + Math.floor(100*y));
             });
             joystickView.bind("horizontalMove", function(x){
                 $("#xVal").html(x);
