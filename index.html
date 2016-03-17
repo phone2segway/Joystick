@@ -107,7 +107,7 @@ button {
   
       <script type="text/javascript">
     
-    	var Math.floor(xVal*100);
+    	var xVal;
     	var yVal;
     	
     	
@@ -119,7 +119,7 @@ button {
                     callbackView.renderSprite();
                 }, 0);
             });
-            joystickView.bind("verticalMove", function(y){
+            joystickView.bind("verticalMove", function(Math.floor(y*100){
                 $("#yVal").html(y);
                 yVal = y;
             });
