@@ -129,18 +129,25 @@ button {
             });
             joystickView.bind("horizontalMove", function(x){
                 $("#xVal").html(x);
-                xVal = Math.floor(x*100);
+                if (x === undefined)
+                	xVal = 0;
+                else
+                	xVal = Math.floor(x*100);
             });
         });
         
         $('#joystickContent').on('touchmove mousemove', function() {
         	console.log ('x-verdi: ' + xVal);
         	console.log('y-verdi: ' + yVal);
+        	
+        	
         	$('#xP').html(xVal + "%");
         });
         $('#joystickContent').on('touchend mouseup', function() {
            xVal = 0;
+           yVal = 0;
            $('#xP').html(xVal + "%");
+            $('#xP').html(yVal + "%");
         });	
     </script>
     	
