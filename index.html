@@ -104,6 +104,10 @@ button {
 
 
     <script type="text/javascript">
+    	var xVal;
+    	var yVal;
+    	
+    	
         $(document).ready(function(){
             var joystickView = new JoystickView(300, function(callbackView){
                 $("#joystickContent").append(callbackView.render().el);
@@ -112,12 +116,17 @@ button {
                 }, 0);
             });
             joystickView.bind("verticalMove", function(y){
-                $("#yVal").html(y); 
-                console.log("y-verdi: " + Math.floor(100*y));
+                $("#yVal").html(y);
+                yVal = y;
             });
             joystickView.bind("horizontalMove", function(x){
                 $("#xVal").html(x);
+                xVal = x;
             });
+        });
+        
+        $('#joystickCanvas').on('touchmove mousemove', function() {
+        	console.log('x-verdi: ' + xVal);
         });
     </script>
     	
