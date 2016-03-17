@@ -121,7 +121,7 @@ button {
             });
             joystickView.bind("verticalMove", function(y){
                 $("#yVal").html(y);
-                yVal = y*100;
+                yVal = Math.floor(y*100);
             });
             joystickView.bind("horizontalMove", function(x){
                 $("#xVal").html(x);
