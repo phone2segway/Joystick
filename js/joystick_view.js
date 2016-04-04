@@ -164,7 +164,7 @@ JoystickView = Backbone.View.extend({
         this.y = y;
     },
     _cartesianToCanvas: function(x, y){
-        var newX = x + this.squareSize / 2;
+        var newX = x + (this.squareSize / 2);
         var newY = y - (this.squareSize / 2);
         newY = newY * -1;
         return {
