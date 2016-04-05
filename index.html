@@ -151,7 +151,10 @@ button {
                 	
                 distance = Math.round(Math.sqrt ((xVal * xVal) + (yVal * yVal)), 1);   // regner ut avstand fra senter
                 angle = Math.round(Math.acos(xVal / distance)*180/Math.PI, 1);         // regner ut vinkelen
-                
+           
+            if (yVal < 0)
+                	angle = 360 - angle;                                          // for å få skalaen fra 0 til 360
+                	
            if (angle > 337 && angle <= 360 ){
                  Turn = 1;
            }
@@ -197,8 +200,7 @@ button {
               
                  
                
-                if (yVal < 0)
-                	angle = 360 - angle;                                          // for å få skalaen fra 0 til 360
+               
                 
         
         	console.log ('x-verdi: ' + xVal);      // viser xVal på console
