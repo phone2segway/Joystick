@@ -155,24 +155,7 @@ button {
            	
            	
            
-        	 function drive ()    {
-			'use strict';
-                        test = angle;               
-			if	(myCharacteristic) {
-				log('> kjører');
-				let Tall = new Uint8Array([1], [240]);
-						
-					if(i==true){
-					i = false;
-					myCharacteristic.writeValue(Tall)
-					.then(i=true)
-							
-				}
-						
-						
-			}
-				
-		}; //fjern etterhvert
+        	
            
            
             if (yVal < 0)
@@ -221,7 +204,24 @@ button {
               	Value = 0;
               
               
-                 
+                 function drive ()    {
+			'use strict';
+                        test = angle;               
+			if	(myCharacteristic) {
+				log('> kjører');
+				let Tall = new Uint8Array([1], [240]);
+						
+					if(i==true){
+					i = false;
+					myCharacteristic.writeValue(Tall)
+					.then(i=true)
+							
+				}
+						
+						
+			}
+				
+		}; //fjern etterhvert 
                
                
                 
