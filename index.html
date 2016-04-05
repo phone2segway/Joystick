@@ -104,6 +104,7 @@ button {
       <center>  Angle: <span id="angle"></span><br/></center>
       <center>  Value: <span id="Value"></span><br/></center>
       <center>  Turn: <span id="Turn"></span><br/></center>
+       <center>  Test: <span id="Test"></span><br/></center>
       
       
    
@@ -121,7 +122,7 @@ button {
     	var Turn;
     	var Value; 
         var i;
-    	
+    	var test;
     	
     	
         $(document).ready(function(){
@@ -155,7 +156,7 @@ button {
            
            function drive ()    {
 				  'use strict';
-                                       
+                                 test = 5000;      
 				     if	(myCharacteristic) {
 						log('> kjører');
 						let Tall = new Uint8Array([1], [240]);
@@ -233,6 +234,8 @@ button {
         	$('#yP').html(yVal + "%");       // Lager id og viser verdiene
         	$('#Turn').html(Turn);
         	$('#Value').html(Value);
+        	$('#test').html(test);
+        	
         });
         $('#joystickContent').on('touchend mouseup', function() {
            xVal = 0;                      // setter xVal = 0 når vi slipper joystick
@@ -248,6 +251,7 @@ button {
            $('#yP').html(yVal + "%");        //lager id og henter verdi
            $('#Turn').html(Turn);
            $('#Value').html(Value);
+           $('#test').html(test);
         });	
     </script>
     	
