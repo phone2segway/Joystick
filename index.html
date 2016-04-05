@@ -211,6 +211,8 @@ button {
         	$('#distance').html(distance);   // Lager id og viser verdiene
         	$('#xP').html(xVal + "%");       // Lager id og viser verdiene
         	$('#yP').html(yVal + "%");       // Lager id og viser verdiene
+        	$('#Turn').html(Turn);
+        	$('#Value').html(Value);
         });
         $('#joystickContent').on('touchend mouseup', function() {
            xVal = 0;                      // setter xVal = 0 når vi slipper joystick
@@ -222,6 +224,8 @@ button {
            $('#distance').html(distance);      // Lager id og viser verdiene
            $('#xP').html(xVal + "%");         //lager id og henter verdi
            $('#yP').html(yVal + "%");        //lager id og henter verdi
+           $('#Turn').html(Turn);
+           $('#Value').html(Value);
         });	
     </script>
     	
