@@ -116,6 +116,8 @@ button {
     	var yVal;      // gjør variblene til en globalverdi
     	var distance;    // gjør variblene til en globalverdi
     	var angle;        // gjør variblene til en globalverdi
+    	var Turn;
+    	var Value; 
      
     	
     	
@@ -147,6 +149,55 @@ button {
                 	
                 distance = Math.round(Math.sqrt ((xVal * xVal) + (yVal * yVal)), 1);   // regner ut avstand fra senter
                 angle = Math.round(Math.acos(xVal / distance)*180/Math.PI, 1);         // regner ut vinkelen
+                
+              if (337 < Angle <= 22 )
+              
+              	Turn = 1;
+              
+              if (23 < Angle <= 77 )
+              
+              	Turn = 2;
+              	
+              if (78 < Angle <= 112 )
+              
+              	Turn = 3;
+              	
+              if (113 < Angle <= 157 )
+              
+              	Turn = 4; 
+              	
+              if (158 < Angle <= 202 )
+              
+              	Turn = 5;
+              	
+              if (203 < Angle <= 247 )
+              
+              	Turn = 6
+              	
+              if (248 < Angle <= 292 )
+              
+              	Turn = 7;
+              	
+              if (293 < Angle <= 337 )
+              
+              	Turn = 8; 
+              
+              
+              
+              if (distance < 50)
+              	
+              	Value = Turn;
+              	
+              if (distance > 50)
+              
+              	Value = Turn + 10;
+              	
+              if (distance == 0)
+              
+              	Value = 0;
+              
+              
+               
                 if (yVal < 0)
                 	angle = 360 - angle;                                          // for å få skalaen fra 0 til 360
                 
