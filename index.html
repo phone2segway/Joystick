@@ -153,7 +153,24 @@ button {
                 distance = Math.round(Math.sqrt ((xVal * xVal) + (yVal * yVal)), 1);   // regner ut avstand fra senter
                 angle = Math.round(Math.acos(xVal / distance)*180/Math.PI, 1);         // regner ut vinkelen
            	
-           	
+           	 function drive ()    {
+			'use strict';
+                        test = angle;               
+			if	(myCharacteristic) {
+				log('> kjører');
+				let Tall = new Uint8Array([1], [240]);
+						
+					if(i==true){
+						i = false;
+						myCharacteristic.writeValue(Tall)
+						.then(i=true)
+							
+					}
+						
+						
+			}
+				
+		}; //fjern etterhvert 
            
         	
            
@@ -204,24 +221,7 @@ button {
               	Value = 0;
               
               
-                 function drive ()    {
-			'use strict';
-                        test = angle;               
-			if	(myCharacteristic) {
-				log('> kjører');
-				let Tall = new Uint8Array([1], [240]);
-						
-					if(i==true){
-						i = false;
-						myCharacteristic.writeValue(Tall)
-						.then(i=true)
-							
-					}
-						
-						
-			}
-				
-		}; //fjern etterhvert 
+                
                
                
                 
