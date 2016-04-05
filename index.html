@@ -120,7 +120,7 @@ button {
     	var angle;        // gjør variblene til en globalverdi
     	var Turn;
     	var Value; 
-     
+        var i;
     	
     	
     	
@@ -151,6 +151,27 @@ button {
                 	
                 distance = Math.round(Math.sqrt ((xVal * xVal) + (yVal * yVal)), 1);   // regner ut avstand fra senter
                 angle = Math.round(Math.acos(xVal / distance)*180/Math.PI, 1);         // regner ut vinkelen
+           
+           
+           function drive ()    {
+				  'use strict';
+                                       
+				     if	(myCharacteristic) {
+						log('> kjører');
+						let Tall = new Uint8Array([1], [240]);
+						
+						if(i==true){
+						i = false;
+						myCharacteristic.writeValue(Tall)
+						.then(i=true)
+							
+						}
+						
+						
+					}
+				
+				}; //fjern etterhvert
+           
            
             if (yVal < 0)
                 	angle = 360 - angle;                                          // for å få skalaen fra 0 til 360
@@ -298,18 +319,7 @@ button {
 				  });
 				}
 				
-			                function joystickContent ()    {
-				  'use strict';
-                                       
-				     if	(myCharacteristic) {
-						log('> kjører');
-						let Tall = new Uint8Array([1], [240]);
-						
-						myCharacteristic.writeValue(Tall);
-						
-					}
-				
-				}; //fjern etterhvert
+			                
 				
 				</script>
 	<script>
