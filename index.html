@@ -250,6 +250,29 @@ button {
            Turn = 0;
            Value = 0;
            
+           if(i==true){
+           		
+           	stop();
+           	function stop(){ 
+			'use strict';
+                         test = angle;
+                          
+			if	(myCharacteristic) {
+				log('> kjører');
+				let Tall = new Uint8Array([Value], [240]);
+						
+					
+						i = false;
+						myCharacteristic.writeValue(Tall)
+						.then(i=true)
+							
+					}
+						
+						
+			}
+				
+		}; //fjern etterhvert 
+           
            $('#angle').html(angle);             // Lager id og viser verdiene
            $('#distance').html(distance);      // Lager id og viser verdiene
            $('#xP').html(xVal + "%");         //lager id og henter verdi
