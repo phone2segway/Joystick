@@ -84,6 +84,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
    <center> <script type="text/html" id="joystick-view"> </center>
    <canvas id="joystickCanvas" width="<%= squareSize %>" height="<%= squareSize %>" style="width: <%= squareSize %>px; height: <%= squareSize %>px;">
         </canvas>
+        
+        
+        
     </script>
 
     <div id="joystickContent">
@@ -391,6 +394,38 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
 				  });
 				}
 				
+				
+				 function submit () {
+				  'use strict';
+						
+				
+					var P-verdi = document.getElementsByName("P-verdi")[0].value;
+					var PID = P-verdi * 10 + 20;
+					if(myCharacteristic) {
+						
+						let Tall = new Uint8Array([PID], [240]);
+						
+						myCharacteristic.writeValue(Tall);
+						
+					}
+					
+					var I-verdi = document.getElementsByName("I-verdi")[0].value;
+					var PID = I-verdi * 10 + 120;
+					if(myCharacteristic) {
+						
+						let Tall = new Uint8Array([PID], [240]);
+						
+						myCharacteristic.writeValue(Tall);
+						
+					}
+					var D-verdi = document.getElementsByName("D-verdi")[0].value;
+					var PID = D-verdi * 100 + 200;
+					if(myCharacteristic) {
+						
+						let Tall = new Uint8Array([PID], [240]);
+						
+						myCharacteristic.writeValue(Tall);
+				 };
 			                
 				
 				</script>
