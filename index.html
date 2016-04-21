@@ -404,26 +404,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
 						
 						myCharacteristic.writeValue(Tall);
 						
-					}
-					
-					var Ki = document.getElementsByName("I-verdi")[0].value;
-					var PID = Ki * 10 +120;
-					if(myCharacteristic) {
-						
-						let Tall = new Uint8Array([PID], [240]);
-						
-						myCharacteristic.writeValue(Tall);
-						
-					}
-					var Kd = document.getElementsByName("D-verdi")[0].value;
-					var PID = Kd * 10 + 200;
-					if(myCharacteristic) {
-						
-						let Tall = new Uint8Array([PID], [240]);
-						
-						myCharacteristic.writeValue(Tall);
-						
-					}
+				
 					
 				};
 				
