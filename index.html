@@ -4,7 +4,7 @@
     	<head>
     	
     	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    		
+    	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">	
     	<style>
     	body {
     		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#959595+0,565554+31,565554+46,4e4e4e+61,010101+79,010101+79,383838+94,1b1b1b+100 */
@@ -103,7 +103,7 @@ button {
     </script>
     
     </head>
-    <body>
+    <body class="w3-container">
     
     
    <center> <script type="text/html" id="joystick-view"> </center>
@@ -305,6 +305,26 @@ button {
 		  <div><b><label for="service">Characteristic: </label></b><input id="characteristic" type="text" list="characteristics" placeholder="Bluetooth Characteristic" value="6e400002-b5a3-f393-e0a9-e50e24dcca9e"></div>
 	       
 		  <br><div><button id="connect" >Koble til enhet</button></div></br>
+		
+		<button onclick="document.getElementById('id01').style.display='block'" class="w3-btn">Open Modal</button>
+
+<div id="id01" class="w3-modal">
+  <div class="w3-modal-content">
+    <header class="w3-container w3-teal"> 
+      <span onclick="document.getElementById('id01').style.display='none'" 
+      class="w3-closebtn">&times;</span>
+      <h2>Modal Header</h2>
+    </header>
+    <div class="w3-container">
+      <p>Some text..</p>
+      <p>Some text..</p>
+    </div>
+    <footer class="w3-container w3-teal">
+      <p>Modal Footer</p>
+    </footer>
+  </div>
+</div>
+		
 		
 		</form> 
 	
