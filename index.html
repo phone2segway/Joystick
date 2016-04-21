@@ -16,8 +16,6 @@ background: -webkit-linear-gradient(-45deg,  rgba(149,149,149,1) 0%,rgba(86,85,8
 background: linear-gradient(135deg,  rgba(149,149,149,1) 0%,rgba(86,85,84,1) 31%,rgba(86,85,84,1) 46%,rgba(78,78,78,1) 61%,rgba(1,1,1,1) 79%,rgba(1,1,1,1) 79%,rgba(56,56,56,1) 94%,rgba(27,27,27,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', endColorstr='#1b1b1b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
-
-
 }
     	
     	
@@ -395,38 +393,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
 				}
 				
 				
-				 function submit () {
-				  'use strict';
-						
-				
-					var P-verdi = document.getElementsByName("P-verdi")[0].value;
-					var PID = P-verdi * 10 + 20;
-					if(myCharacteristic) {
-						
-						let Tall = new Uint8Array([PID], [240]);
-						
-						myCharacteristic.writeValue(Tall);
-						
-					}
-					
-					var I-verdi = document.getElementsByName("I-verdi")[0].value;
-					var PID = I-verdi * 10 + 120;
-					if(myCharacteristic) {
-						
-						let Tall = new Uint8Array([PID], [240]);
-						
-						myCharacteristic.writeValue(Tall);
-						
-					}
-					var D-verdi = document.getElementsByName("D-verdi")[0].value;
-					var PID = D-verdi * 100 + 200;
-					if(myCharacteristic) {
-						
-						let Tall = new Uint8Array([PID], [240]);
-						
-						myCharacteristic.writeValue(Tall);
-					}
-				 };
+				 
 			                
 				
 				</script>
