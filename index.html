@@ -295,9 +295,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
         <label for="name">D-verdi</label>
         <input type="number" name="dv"  value="3">
         
-        <br><button class="w3-btn" id="p-verdi" >P-verdi</button></br>
-        <br><button class="w3-btn" id="i-verdi" >I-verdi</button></br>
-        <br><button class="w3-btn" id="d-verdi" >D-verdi</button></br>
+        <br><button id="sendverdi" onclick="sendverdi()">Send Kp</button></br>
+        <br><button class="w3-btn" id="p-verdi" > onlick="p-verdi()">P-verdi"</button></br>
+        <br><button class="w3-btn" id="i-verdi" > onlick="i-verdi()">I-verdi"</button></br>
+        <br><button class="w3-btn" id="d-verdi" > onlick="i-verdi()">D-verdi"</button></br>
+       
        
         </form>
         
@@ -336,7 +338,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
 
 
 
-
+<!--
 
 <div id="id02" class="w3-modal">
 	<div class="w3-modal-content">
@@ -365,7 +367,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
      
         <button id="submit" onclick="submit()>Submit</button></br>
       
-	
+	-->
     
     
   
@@ -442,23 +444,21 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
 				</script>
 				
 				
-	<script type="text/javascript">
-    
-    	var PID;     // gjør variblene til en globalverdi
-    	
+
 				
-				
-				
-			      </button>	function p-verdi (pv) {
+			            function p-verdi (pv) {
 				  'use strict';
-					$("#P").html(pv);
 					
-					var P = pv * 10 + 20;
+					
+					var P = document.getElementsByName("pv")[0].value;
+					var Kp = P * 10 + 20;
 					if(myCharacteristic) {
 						
-						let Tall = new Uint8Array([P], [240]);
+						let Tall = new Uint8Array([Kp], [240]);
 						
 						myCharacteristic.writeValue(Tall);
+						
+						
 						
 					}
 					
@@ -466,29 +466,35 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
 				
 					function i-verdi (iv) {
 				  'use strict';
-					$("#I").html(iv);	
 					
-					var I = iv * 10 + 20;
+					
+					var I = document.getElementsByName("iv")[0].value;
+					var Ki = P * 10 + 20;
 					if(myCharacteristic) {
 						
-						let Tall = new Uint8Array([I], [240]);
+						let Tall = new Uint8Array([Ki], [240]);
 						
 						myCharacteristic.writeValue(Tall);
+						
+						
 						
 					}
 					
 				};
 				
-					function d-verdi (dv) {
+					function i-verdi (iv) {
 				  'use strict';
-					$("#D").html(dv);	
 					
-					var D = dv * 10 + 20;
+					
+					var D = document.getElementsByName("dv")[0].value;
+					var Kd = D * 10 + 20;
 					if(myCharacteristic) {
 						
-						let Tall = new Uint8Array([D], [240]);
+						let Tall = new Uint8Array([Kd], [240]);
 						
 						myCharacteristic.writeValue(Tall);
+						
+						
 						
 					}
 					
