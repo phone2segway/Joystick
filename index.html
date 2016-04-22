@@ -349,7 +349,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
 				  'use strict';
 						
 					var kverdi = document.getElementsByName("kpverdi")[0].value;
-					var Kp = kverdi;
+					var Kp = kverdi * 10 + 20;
 					if(myCharacteristic) {
 						log('> sender kp!');
 						let Tall = new Uint8Array([Kp], [240]);
