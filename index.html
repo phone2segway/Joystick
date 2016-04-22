@@ -279,8 +279,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
       <p><div></p><label for="service">Service: </label></b><input id="service" type="text" list="services" value="6e400001-b5a3-f393-e0a9-e50e24dcca9e"></div></p>
       <p><div><label for="service">Characteristic: </label></b><input id="characteristic" type="text" list="characteristics" value="6e400002-b5a3-f393-e0a9-e50e24dcca9e"></div></p>
    
-   <br><input type="number" name="kpverdi"></br>
-   <br><button id="sendverdi" onclick="sendverdi()">Send Kp</button></br>
+   <br><input type="number" name="pverdi"></br>
+   <br><button id="sendkp" onclick="sendkp()">Send Kp</button></br>
+   
+   <br><input type="number" name="iverdi"></br>
+   <br><button id="sendki" onclick="sendki()">Send Ki</button></br>
+   
+   <br><input type="number" name="dverdi"></br>
+   <br><button id="sendkd" onclick="sendkd()">Send Kd</button></br>
 
 
 	<script>
@@ -345,11 +351,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
 				
 				
 				
-				function sendverdi () {
+				function sendkp () {
 				  'use strict';
 						
-					var kverdi = document.getElementsByName("kpverdi")[0].value;
-					var Kp = kverdi * 10 + 20;
+					var Kpverdi = document.getElementsByName("pverdi")[0].value;
+					var Kp = Kpverdi * 10 + 20;
 					if(myCharacteristic) {
 						log('> sender kp!');
 						let Tall = new Uint8Array([Kp], [240]);
@@ -359,6 +365,32 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
 					}
 				};
 				
+				function sendki () {
+				  'use strict';
+						
+					var Kiverdi = document.getElementsByName("iverdi")[0].value;
+					var Ki = Kiverdi * 10 + 120;
+					if(myCharacteristic) {
+						log('> sender ki!');
+						let Tall = new Uint8Array([Ki], [240]);
+						
+						myCharacteristic.writeValue(Tall);
+						
+					}
+				};
+				function sendkd () {
+				  'use strict';
+						
+					var Kdverdi = document.getElementsByName("dverdi")[0].value;
+					var Kd = Kdverdi * 10 + 200;
+					if(myCharacteristic) {
+						log('> sender kd!');
+						let Tall = new Uint8Array([Kd], [240]);
+						
+						myCharacteristic.writeValue(Tall);
+						
+					}
+				};
 				
 				
 				</script>
