@@ -313,21 +313,22 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
     <div>
         
         <label for="name">P-verdi</label>
-        <input type="number" name="P-verdi"  value="3">
+        <input type="number" name="pv"  value="3">
         
         
     </div>
     <div>
         <label for="name">I-verdi</label>
-        <input type="number" name="I-verdi"  value="2">
+        <input type="number" name="iv"  value="2">
     </div>
     <div>
         <label for="name">D-verdi</label>
-        <input type="number" name="D-verdi"  value="1">
+        <input type="number" name="dv"  value="1">
     </div>
      
      
-        <button id="submit" onclick="submit()">Submit</button></br>
+        <button id="submit" onclick="submit(document.getElementByName('pv').value, document.getElementByName('iv').value, document.getElementByName('dv').value)">Submit</button></br>
+      
 	
     
     
@@ -402,10 +403,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
 				  });
 				}
 				
-				function submit () {
+				function submit (pv,iv,dv) {
 				  'use strict';
 						
-					var Kp = document.getElementsByName("P-verdi")[0].value;
+					var Kp = document.getElementsByName("pv")[0].value;
 					var PID = Kp * 10 + 20;
 					if(myCharacteristic) {
 						
