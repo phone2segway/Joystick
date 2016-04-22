@@ -295,7 +295,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
         <label for="name">D-verdi</label>
         <input type="number" name="dv"  value="3">
         
-        <br><button class="w3-btn" id="submit" >Submit</button></br>
+        <br><button class="w3-btn" id="p-verdi" >P-verdi</button></br>
+        <br><button class="w3-btn" id="i-verdi" >I-verdi</button></br>
+        <br><button class="w3-btn" id="d-verdi" >D-verdi</button></br>
+       
         </form>
         
         
@@ -348,7 +351,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
         
         <label for="name">P-verdi</label>
         <input type="number" name="pv"  value="3">
-        
         
     </div>
     <div>
@@ -447,14 +449,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
 				
 				
 				
-				function submit (pv,iv,dv) {
+			      </button>	function p-verdi (pv) {
 				  'use strict';
-					$("#PID").html(pv);
+					$("#P").html(pv);
 					
-					var PID = pv * 10 + 20;
+					var P = pv * 10 + 20;
 					if(myCharacteristic) {
 						
-						let Tall = new Uint8Array([PID], [240]);
+						let Tall = new Uint8Array([P], [240]);
 						
 						myCharacteristic.writeValue(Tall);
 						
@@ -462,14 +464,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
 					
 				};
 				
-					function submit (pv,iv,dv) {
+					function i-verdi (iv) {
 				  'use strict';
-					$("#PID").html(iv);	
+					$("#I").html(iv);	
 					
-					var PID = iv * 10 + 20;
+					var I = iv * 10 + 20;
 					if(myCharacteristic) {
 						
-						let Tall = new Uint8Array([PID], [240]);
+						let Tall = new Uint8Array([I], [240]);
 						
 						myCharacteristic.writeValue(Tall);
 						
@@ -477,14 +479,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
 					
 				};
 				
-					function submit (pv,iv,dv) {
+					function d-verdi (dv) {
 				  'use strict';
-					$("#PID").html(dv);	
+					$("#D").html(dv);	
 					
-					var PID = dv * 10 + 20;
+					var D = dv * 10 + 20;
 					if(myCharacteristic) {
 						
-						let Tall = new Uint8Array([PID], [240]);
+						let Tall = new Uint8Array([D], [240]);
 						
 						myCharacteristic.writeValue(Tall);
 						
