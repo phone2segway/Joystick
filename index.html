@@ -263,7 +263,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
 						
 			}
 				
-		}; //fjern etterhvert 
+		}; 
            
            $('#angle').html(angle);             // Lager id og viser verdiene
            $('#distance').html(distance);      // Lager id og viser verdiene
@@ -403,11 +403,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
 				  });
 				}
 				
+				
+				<script type="text/javascript">
+    
+    	var pVal;     // gjør variblene til en globalverdi
+    	var iVal;      // gjør variblene til en globalverdi
+    	var dVal;    // gjør variblene til en globalverdi
+				
+				
+				
 				function submit (pv,iv,dv) {
 				  'use strict';
-						
-					var Kp = document.getElementsByName("pv")[0].value;
-					var PID = Kp * 10 + 20;
+					$("#pVal").html(pv);
+					
+					var PID = pVal * 10 + 20;
 					if(myCharacteristic) {
 						
 						let Tall = new Uint8Array([PID], [240]);
@@ -420,9 +429,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
 				
 					function submit (pv,iv,dv) {
 				  'use strict';
-						
-					var Ki = document.getElementsByName("iv")[0].value;
-					var PID = Kp * 10 + 20;
+					$("#iVal").html(iv);	
+					
+					var PID = iVal * 10 + 20;
 					if(myCharacteristic) {
 						
 						let Tall = new Uint8Array([PID], [240]);
@@ -435,9 +444,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
 				
 					function submit (pv,iv,dv) {
 				  'use strict';
-						
-					var Kd = document.getElementsByName("dv")[0].value;
-					var PID = Kp * 10 + 20;
+					$("#dVal").html(dv);	
+					
+					var PID = dVal * 10 + 20;
 					if(myCharacteristic) {
 						
 						let Tall = new Uint8Array([PID], [240]);
@@ -448,6 +457,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
 					
 				};
 				</script>
+				
+		
+        	
 	<script>
   document.querySelector('form').addEventListener('submit', function(event) {
     event.stopPropagation();
