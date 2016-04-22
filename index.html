@@ -418,6 +418,35 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
 					
 				};
 				
+					function submit (pv,iv,dv) {
+				  'use strict';
+						
+					var Ki = document.getElementsByName("iv")[0].value;
+					var PID = Kp * 10 + 20;
+					if(myCharacteristic) {
+						
+						let Tall = new Uint8Array([PID], [240]);
+						
+						myCharacteristic.writeValue(Tall);
+						
+					}
+					
+				};
+				
+					function submit (pv,iv,dv) {
+				  'use strict';
+						
+					var Kd = document.getElementsByName("dv")[0].value;
+					var PID = Kp * 10 + 20;
+					if(myCharacteristic) {
+						
+						let Tall = new Uint8Array([PID], [240]);
+						
+						myCharacteristic.writeValue(Tall);
+						
+					}
+					
+				};
 				</script>
 	<script>
   document.querySelector('form').addEventListener('submit', function(event) {
