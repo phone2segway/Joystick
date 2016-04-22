@@ -327,7 +327,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
     </div>
      
      
-        <button id="submit" onclick="submit(document.getElementByName('pv').value, document.getElementByName('iv').value, document.getElementByName('dv').value)">Submit</button></br>
+        <button id="submit" onclick="submit()>Submit</button></br>
       
 	
     
@@ -403,8 +403,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
 				  });
 				}
 				
+				</script>
 				
-				<script type="text/javascript">
+				
+	<script type="text/javascript">
     
     	var pVal;     // gjør variblene til en globalverdi
     	var iVal;      // gjør variblene til en globalverdi
@@ -414,9 +416,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
 				
 				function submit (pv,iv,dv) {
 				  'use strict';
-					$("#pVal").html(pv);
+					$("#PID").html(pv);
 					
-					var PID = pVal * 10 + 20;
+					var PID = pv * 10 + 20;
 					if(myCharacteristic) {
 						
 						let Tall = new Uint8Array([PID], [240]);
@@ -429,9 +431,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
 				
 					function submit (pv,iv,dv) {
 				  'use strict';
-					$("#iVal").html(iv);	
+					$("#PID").html(iv);	
 					
-					var PID = iVal * 10 + 20;
+					var PID = iv * 10 + 20;
 					if(myCharacteristic) {
 						
 						let Tall = new Uint8Array([PID], [240]);
@@ -444,9 +446,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
 				
 					function submit (pv,iv,dv) {
 				  'use strict';
-					$("#dVal").html(dv);	
+					$("#PID").html(dv);	
 					
-					var PID = dVal * 10 + 20;
+					var PID = dv * 10 + 20;
 					if(myCharacteristic) {
 						
 						let Tall = new Uint8Array([PID], [240]);
