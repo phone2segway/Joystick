@@ -281,15 +281,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
 		
 		</form> 
 		
-		<button onclick="document.getElementById('id01').style.display='block'" class="w3-btn">Settings</button>
+	<!--	<button onclick="document.getElementById('id01').style.display='block'" class="w3-btn">Settings</button> -->
 		<button onclick="document.getElementById('id02').style.display='block'" class="w3-btn">PID</button>
 
 	<div id="id01" class="w3-modal">
 	<div class="w3-modal-content">
     <header class="w3-container w3-teal"> 
-      <span onclick="document.getElementById('id01').style.display='none'" 
+  <!--    <span onclick="document.getElementById('id01').style.display='none'" -->
       class="w3-closebtn">&times;</span>
-      <h2>Settings</h2>
+  <!--    <h2>Settings</h2>
     </header>
     <div class="w3-container">
       <p><div></p><label for="service">Service: </label></b><input id="service" type="text" list="services" value="6e400001-b5a3-f393-e0a9-e50e24dcca9e"></div></p>
@@ -299,7 +299,41 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
       <p>Modal Footer</p>
     </footer>
   </div>
+</div> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+	
+	
+	
+
+<div data-role="page">
+  <div data-role="header">
+    <h1>Slider Control</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <form method="post" action="demoform.asp">
+      <label for="points">Points:</label>
+      <input type="range" name="points" id="points" value="50" min="0" max="100">
+      <input type="submit" data-inline="true" value="Submit">
+    </form>
+  </div>
 </div>
+
+</body>
+</html>
+
+
+
+
 
 <div id="id02" class="w3-modal">
 	<div class="w3-modal-content">
