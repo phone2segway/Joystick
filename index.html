@@ -299,8 +299,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003d5b', end
     <header class="w3-container" style="background-color:#007acc"> 
       <span onclick="document.getElementById('id01').style.display='none'" 
       class="w3-closebtn">&times;</span>
+      
       <h2>PID regulator</h2>
-    </header>
+          </header>
     <div class="w3-container" align="center">
       
    <br><input type="number" name="pverdi" value="3" min="0" max="9.9" style="width:50px">
@@ -310,8 +311,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003d5b', end
    <br><input type="number" name="dverdi" value="1" min="0" max="5.5"style="width:50px">
    <button id="sendkd" onclick="sendkd()" class="w3-btn w3-round-large w3-small w3-border w3-border-blue w3-round">D</button>
    
-   
-</div>
+   </div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
 
 </body>
 
