@@ -384,6 +384,7 @@ window.onclick = function(event) {
 				  .then(characteristic => {
 				  		myCharacteristic = characteristic;
 				  	//	log('> Tilkoblet enhet. Segway kan nå styres.');
+				  		document.getElementById("connect").innerHTML = "Tilkoblet";
 					})
 				  .catch(error => {
 					log('Feil ' + error);
