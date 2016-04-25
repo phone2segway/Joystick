@@ -276,7 +276,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
 <button class="w3-btn" id="connect" >Koble til enhet</button>
 	</form>	
 	
-      
+   <button onclick="document.getElementById('id01').style.display='block'" class="w3-btn">Open Modal</button>   
      
    <div align="center">
    <br><input type="number" name="pverdi" style="width:50px">
@@ -287,6 +287,37 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
    <button id="sendki" onclick="sendki()" class="w3-btn w3-round-large w3-small w3-border w3-border-blue w3-round">Send Ki</button>
    <button id="sendkd" onclick="sendkd()" class="w3-btn w3-round-large w3-small w3-border w3-border-blue w3-round">Send Kd</button>
 </div>
+
+
+
+
+<body class="w3-container">
+
+<h2>W3.CSS Modal</h2>
+<p>Use w3-container classes to create different sections in the modal (e.g. header & footer).</p>
+
+
+
+<div id="id01" class="w3-modal">
+  <div class="w3-modal-content">
+    <header class="w3-container w3-teal"> 
+      <span onclick="document.getElementById('id01').style.display='none'" 
+      class="w3-closebtn">&times;</span>
+      <h2>Modal Header</h2>
+    </header>
+    <div class="w3-container">
+      <p>Some text..</p>
+      <p>Some text..</p>
+    </div>
+    <footer class="w3-container w3-teal">
+      <p>Modal Footer</p>
+    </footer>
+  </div>
+</div>
+            
+</body>
+
+
 
 	<script>
 	
