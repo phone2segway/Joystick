@@ -303,8 +303,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003d5b', end
       <h2>PID-innstillinger <i class="material-icons w3-large">settings </i></h2>
           </header>
     <div class="w3-container w3-text-shadow" align="center">
+    	
+    	
+    <form id='myform' method='POST' action='#'>                             <!--nytt -->
+    <input type='button' value='-' class='qtyminus' field='quantity' />	     <!--  nytt -->
+    	
+    	
       
    <br><input type="number" name="pverdi" value="3" min="0" max="9.9" style="width:50px">
+   
+   <input type='button' value='+' class='qtyplus' field='quantity' />      <!--nytt-->
+</form>
+   
    <button id="sendkp" onclick="sendkp()" class="w3-btn w3-round-large w3-small w3-border w3-border-blue w3-round w3-text-shadow">send P</button>
    <br><input type="number" name="iverdi" value="3" min="0" max="7.9"style="width:50px">
    <button id="sendki" onclick="sendki()" class="w3-btn w3-round-large w3-small w3-border w3-border-blue w3-round w3-text-shadow">send I</button>
@@ -314,6 +324,48 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003d5b', end
    </div>
 
 <script>
+
+//nytt
+
+jQuery(document).ready(function(){                   
+    // This button will increment the value
+    $('.qtyplus').click(function(e){
+        // Stop acting like a button
+        e.preventDefault();
+        // Get the field name
+        fieldName = $(this).attr('field');
+        // Get its current value
+        var currentVal = parseInt($('input[name='+fieldName+']').val());
+        // If is not undefined
+        if (!isNaN(currentVal)) {
+            // Increment
+            $('input[name='+fieldName+']').val(currentVal + 0.1);
+        } else {
+            // Otherwise put a 0 there
+            $('input[name='+fieldName+']').val(0);
+        }
+    });
+    // This button will decrement the value till 0
+    $(".qtyminus").click(function(e) {
+        // Stop acting like a button
+        e.preventDefault();
+        // Get the field name
+        fieldName = $(this).attr('field');
+        // Get its current value
+        var currentVal = parseInt($('input[name='+fieldName+']').val());
+        // If it isn't undefined or its greater than 0
+        if (!isNaN(currentVal) && currentVal > 0) {
+            // Decrement one
+            $('input[name='+fieldName+']').val(currentVal - 1);
+        } else {
+            // Otherwise put a 0 there
+            $('input[name='+fieldName+']').val(0);
+        }
+    });
+});                                                           
+
+//nytt
+
 // Get the modal
 var modal = document.getElementById('id01');
 
