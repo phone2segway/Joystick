@@ -339,7 +339,8 @@ jQuery(document).ready(function(){
         // If is not undefined
         if (!isNaN(currentVal)) {
             // Increment
-            $('input[name='+fieldName+']').val(currentVal + 1);
+            var newVal = currentVal + 0.1;
+            $('input[name='+fieldName+']').val(newVal);
         } else {
             // Otherwise put a 0 there
             $('input[name='+fieldName+']').val(0);
