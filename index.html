@@ -302,15 +302,28 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003d5b', end
       
       <h2>PID-innstillinger <i class="material-icons w3-large">settings </i></h2>
           </header>
+   
+ .a,.b{  
+  display:inline-block;
+  position: relative;
+  
+  float:left;
+  width:14%;
+  height:100;
+  }
+   
           
  <div class="w3-container w3-text-shadow" align="center">
-    
+    <div class="a">
+    	
      <form id='myform' method='POST' action='#'>                           <!--nytttt -->
     <br><input type='button' value='-' class='qtyminus w3-btn w3-round-large w3-border w3-border-blue w3-text-shadow' field='pverdi' />	     <!--  nytt -->
     	<input type="number" name="pverdi" value="3" min="0" max="9.9" class="w3-large w3-round-large w3-border w3-border-blue"step="0.1" style="width:50px">
     	<input type='button' value='+' class='qtyplus w3-btn w3-round-large w3-border w3-border-blue w3-text-shadow' field='pverdi' /> </form>  
+        </div>
+        <div class="b">
         <button id="sendkp" onclick="sendkp()" class="w3-btn w3-round-large w3-small w3-border w3-border-blue w3-text-shadow">send P</button>
-   	
+   	</div>
    	
    <form id='myform' method='POST' action='#'>                             <!--nytt -->
    	<input type='button' value='-' class='qtyminus w3-btn w3-round-large w3-border w3-border-blue w3-text-shadow' field='iverdi' />
