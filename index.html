@@ -28,31 +28,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003d5b', end
 
 
 }
-    	
-    	
-   	 #detRetteElement {
- 	  width: 930px;
- 	  background: red;
- 	  color: white;
-	 }
-	 @media all and (max-width: 930px) {
- 	 #detRetteElement {
-  	  width: 600px;
-     	  background: green;
- 	 }
-	}
-	@media all and (max-width: 620px) {
- 	#detRetteElement {
-  	 width: 100%;
-     	 background: blue;
- 	}
-       }
-           	label {
-    		display: inline-block;
-    		width: 120px;
-    		font-weight: 1000;
-    	}
-    	
+    
   
     	</style>
     		
@@ -141,7 +117,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003d5b', end
             });
             joystickView.bind("horizontalMove", function(x){
                 $("#xVal").html(x);        // lager en id og skriver ut verdiene
-                
                	xVal = Math.floor(x*100);   // gjør om xVal verdien til prosent
             });
         });
