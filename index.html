@@ -1,13 +1,9 @@
 <html>
-
-
-    	<head>
-    	
+     <head>
     	<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0; user-scalable=0;">
     	<meta name="description" content="Web Page for controlling an almost balancing robot">
     	
     	<link rel="icon" type="image/png" href="ikon2.png"/>
-    	
     	<link rel="stylesheet" href="w3.css">
 	<link rel="stylesheet" href="lib/w3-theme-indigo.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -24,12 +20,7 @@ background: -webkit-linear-gradient(top,  rgba(0,61,91,1) 27%,rgba(0,74,96,1) 41
 background: linear-gradient(to bottom,  rgba(0,61,91,1) 27%,rgba(0,74,96,1) 41%,rgba(0,74,96,1) 54%,rgba(0,45,58,1) 67%,rgba(0,63,76,1) 81%,rgba(76,103,107,1) 93%,rgba(87,116,124,1) 98%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003d5b', endColorstr='#57747c',GradientType=0 ); /* IE6-9 */
 
-
-
-
-}
-    
-  
+		}
     	</style>
     		
         <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
@@ -39,56 +30,51 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003d5b', end
         
          <script>
          
-         
-      // If we're running on a real web server (as opposed to localhost, which is whitelisted),
-      // then change the protocol to HTTPS.
-      // See https://goo.gl/lq4gCo for an explanation as to why this is needed for some features.
-      (function() {
-        var isLocalhost = !!(window.location.hostname === 'localhost' ||
-          // [::1] is the IPv6 localhost address.
-          window.location.hostname === '[::1]' ||
-          // 127.0.0.1/8 is considered localhost for IPv4.
-          window.location.hostname.match(/^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/));
-        if (window.location.protocol === 'http:' && !isLocalhost) {
-          // Redirect to https: if we're currently using http: and we're not on localhost.
-          window.location.protocol = 'https:';
-        }
-      })();
-      window.addEventListener('error', function(error) {
-        if (ChromeSamples && ChromeSamples.setStatus) {
-          ChromeSamples.setStatus(error.message + ' (Nettleseren din støtter ikke Web Bluetooth.)');
-          error.preventDefault();
-        }
-      });
-    </script>
+	 // If we're running on a real web server (as opposed to localhost, which is whitelisted),
+      	// then change the protocol to HTTPS.
+	 // See https://goo.gl/lq4gCo for an explanation as to why this is needed for some features.
+      		(function() {
+        	var isLocalhost = !!(window.location.hostname === 'localhost' ||
+        	 // [::1] is the IPv6 localhost address.
+          	window.location.hostname === '[::1]' ||
+          	// 127.0.0.1/8 is considered localhost for IPv4.
+        	 window.location.hostname.match(/^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/));
+        		if (window.location.protocol === 'http:' && !isLocalhost) {
+        		 // Redirect to https: if we're currently using http: and we're not on localhost.
+        		 window.location.protocol = 'https:';
+        			}
+      			})();
+      		window.addEventListener('error', function(error) {
+        		if (ChromeSamples && ChromeSamples.setStatus) {
+        		 ChromeSamples.setStatus(error.message + ' (Nettleseren din støtter ikke Web Bluetooth.)');
+          		 error.preventDefault();
+        		   }
+      			});
+    	</script>
     
     </head>
+    
     <body>
-    
-    
-   <center> <script type="text/html" id="joystick-view"> </center>
-   <canvas id="joystickCanvas" width="<%= squareSize %>" height="<%= squareSize %>" style="width: <%= squareSize %>px; height: <%= squareSize %>px;">
+    	
+   	<center> <script type="text/html" id="joystick-view"> </center>
+   	<canvas id="joystickCanvas" width="<%= squareSize %>" height="<%= squareSize %>" style="width: <%= squareSize %>px; height: <%= squareSize %>px;">
         </canvas>
         
-        
-        
-    </script>
+    	</script>
 
-    <div id="joystickContent">
+    <div id="joystickContent">   <!--fjernes?-->
     </div>
     <div>
-    
-    <!-- <center>  x: <span id="xVal"></span><br/></center>
-    // <center>  y: <span id="yVal"></span><br/></center>
-    // <center>  xprosent: <span id="xP"></span><br/></center>     
-    // <center>  yprosent: <span id="yP"></span><br/></center>
-    // <center>  Distance: <span id="distance"></span><br/></center>
-    // <center>  Angle: <span id="angle"></span><br/></center>
-    // <center>  Value: <span id="Value"></span><br/></center>
-    // <center>  Turn: <span id="Turn"></span><br/></center>
-    //  <center>  test: <span id="test"></span><br/></center> -->
+    	<!-- <center>  x: <span id="xVal"></span><br/></center>
+    	// <center>  y: <span id="yVal"></span><br/></center>
+    	// <center>  xprosent: <span id="xP"></span><br/></center>     
+    	// <center>  yprosent: <span id="yP"></span><br/></center>
+    	// <center>  Distance: <span id="distance"></span><br/></center>
+    	// <center>  Angle: <span id="angle"></span><br/></center>
+    	// <center>  Value: <span id="Value"></span><br/></center>
+    	// <center>  Turn: <span id="Turn"></span><br/></center>
+    	//  <center>  test: <span id="test"></span><br/></center> -->
      
-  
     </div>
     
   
@@ -103,23 +89,22 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003d5b', end
         var i=true;
     	var test;
     	
-    	
         $(document).ready(function(){
             var joystickView = new JoystickView(300, function(callbackView){     // størelsen på bakre bilde = 300
                 $("#joystickContent").append(callbackView.render().el);
                 setTimeout(function(){
                     callbackView.renderSprite();
                 }, 0);
-            });
+            								    });
             joystickView.bind("verticalMove", function(y){
                 $("#yVal").html(y);        // lager en id og skriver ut verdiene.
                 yVal = Math.floor( y*100); // gjør om yVal verdien til prosent
-            });
+            	});
             joystickView.bind("horizontalMove", function(x){
                 $("#xVal").html(x);        // lager en id og skriver ut verdiene
                	xVal = Math.floor(x*100);   // gjør om xVal verdien til prosent
+            	});
             });
-        });
         
         $('#joystickContent').on('touchmove mousemove', function() {
         
@@ -133,30 +118,22 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003d5b', end
            	 
            	if(i==true){
            		
-           	drive();
-           	function drive(){ 
+           		drive();
+           		function drive(){ 
 			'use strict';
                          test = angle;
                           
-			if	(myCharacteristic) {
-			// log('> kjører');
+				if	(myCharacteristic) {
+				// log('> kjører');
 				let Tall = new Uint8Array([Value], [240]);
-						
 					
 						i = false;
 						myCharacteristic.writeValue(Tall)
 						.then(i=true)
-							
+						}
 					}
-						
-						
-			}
 				
-		}; //fjern etterhvert 
-           
-        	
-           
-           
+				}; //fjern etterhvert 
             if (yVal < 0)
                 	angle = 360 - angle;                                          // for å få skalaen fra 0 til 360
                 	
@@ -166,34 +143,31 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003d5b', end
             if (angle > 0 && angle <= 22 ){
                  Turn = 1;
            }
-                
-              if (angle > 23 && angle <= 77 ){
+             if (angle > 23 && angle <= 77 ){
                  Turn = 2;
-              }
-              	
+           }
               if (angle > 78 && angle <= 112 ){
                 Turn = 3;
-              }
+           }
               if (angle > 113 && angle <= 157 ){
                  Turn = 4; 
-              }
+           }
               if (angle > 158 && angle <= 202 ){
                  Turn = 5;
-              }
+           }
               if (angle > 203 && angle <= 247 ){
               	Turn = 6
-              }
+           }
               if (angle > 248 && angle <= 292 ){
               	Turn = 7;
-              }
+           }
               if (angle > 293 && angle <= 337 ){
               	Turn = 8; 
-              }
-              
+           }
               if (distance <= 70){
               	
               	Value = Turn;
-              }
+           }
               if (distance > 70)
               
               	Value = Turn + 10;
@@ -201,9 +175,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003d5b', end
               if (distance == 0)
               
               	Value = 0;
-              
-              
-        
+              	
         	console.log ('x-verdi: ' + xVal);      // viser xVal på console
         	console.log('y-verdi: ' + yVal);          // viser yVal på console
         	
@@ -240,12 +212,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003d5b', end
 						myCharacteristic.writeValue(Tall)
 						.then(i=true)
 							
-					}
-						
-						
-			}
-				
-		}; 
+		  }
+		}
+	      }; 
            
            $('#angle').html(angle);             // Lager id og viser verdiene
            $('#distance').html(distance);      // Lager id og viser verdiene
@@ -258,20 +227,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003d5b', end
         </script>
     	
  <form>
- 
-   		
+ 	
 <button class="w3-btn w3-round-large w3-border w3-border-blue w3-text-shadow w3-round" id="connect" >Koble til enhet    <i class="material-icons w3-large">settings_bluetooth</i></button>
 
  </form>	
 	
 <button onclick="document.getElementById('id01').style.display='block'" class="w3-btn w3-round-large w3-border w3-border-blue w3-text-shadow w3-round">PID-innstillinger  <i class="material-icons w3-large">settings</i></button>   
    
-
  <footer class="w3-container w3-bottom">
      <div align="center" class=w3-padding-small></div><p><img src="logo_ntnu_bokm-sample-a.png" width=100 height=35><img src="200px-Nordic_Semiconductor_logo.png" width=80 height=45><br>
     </p></div></footer>
-    
-   
    
 <body class="w3-container"  style="background-color:#003d66">
 <div id="id01" class="w3-modal">
@@ -285,38 +250,32 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003d5b', end
           
           
  <head>         
- <style>  
- .a,.b{  
-  display:inline-block;
-  position: relative;
-  margin: 2%;
-  float:center;
-  
-  height:30;
-  }
-   .c,.d{  
-  display:inline-block;
-  position: relative;
-  margin: 2%;
-  float:center;
-  
-  height:30;
-  }
-   .e,.f{  
-  display:inline-block;
-  position: relative;
-  margin: 2%;
-  float:center;
-  
-  height:30;
-  }
+    <style>  
+     .a,.b{  
+     display:inline-block;
+     position: relative;
+     margin: 2%;
+     float:center;
+     height:30;
+         }
+     .c,.d{  
+     display:inline-block;
+     position: relative;
+     margin: 2%;
+     float:center;
+     height:30;
+         }
+    .e,.f{  
+    display:inline-block;
+    position: relative;
+    margin: 2%;
+    float:center;
+    height:30;
+  	 }
    </style>
-    </head>   
+</head>   
     
  <div class="w3-container w3-text-shadow" align="center">
-    
-    	
-    	
     
 <div class="a">	
      
@@ -339,7 +298,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003d5b', end
         <button id="sendki" onclick="sendki()" class="w3-btn w3-round-large w3-small w3-border w3-border-blue w3-round w3-text-shadow">send I</button>
    	</div><br>
    
-   <div class="e">	
+<div class="e">	
    <form id='myform' method='POST' action='#'>                             <!--nytt -->
    	<input type='button' value='-' class='qtyminus w3-btn w3-round-large w3-border w3-border-blue w3-text-shadow' field='dverdi' />	     <!--  nytt --> 
    	<input type="number" name="dverdi" value="1" min="0" max="5.5" class="w3-large w3-round-large w3-border w3-border-blue" style="width:50px">
@@ -351,8 +310,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003d5b', end
    </div>
 
 <script>
-
-//nytt
 
 jQuery(document).ready(function(){                   
     // This button will increment the value
@@ -368,11 +325,12 @@ jQuery(document).ready(function(){
             // Increment
             
             $('input[name='+fieldName+']').val((Math.round((currentVal + 0.1)*10)/10));
-        } else {
-            // Otherwise put a 0 there
-            $('input[name='+fieldName+']').val(0);
-        }
-    });
+        	} 
+        	else {
+            	// Otherwise put a 0 there
+            	$('input[name='+fieldName+']').val(0);
+            }
+    	});
     // This button will decrement the value till 0
     $(".qtyminus").click(function(e) {
         // Stop acting like a button
@@ -385,11 +343,12 @@ jQuery(document).ready(function(){
         if (!isNaN(currentVal) && currentVal > 0) {
             // Decrement one
             $('input[name='+fieldName+']').val((Math.round((currentVal - 0.1)*10)/10));
-        } else {
+        } 
+        else {
             // Otherwise put a 0 there
             $('input[name='+fieldName+']').val(0);
-        }
-    });
+               }
+    				});
 });                                                           
 
 //nytt
@@ -401,41 +360,33 @@ var modal = document.getElementById('id01');
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
-    }
-}
+    	}
+      }
 </script>
-
-
 </body>
-
-
-
 	<script>
-	
 		  var ChromeSamples = {
 			log: function() {
 			  var line = Array.prototype.slice.call(arguments).map(function(argument) {
 				return typeof argument === 'string' ? argument : JSON.stringify(argument);
-			  }).join(' ');
+			  									 }).join(' ');
 			  document.querySelector('#log').textContent += line + '\n';
-			},
+			  },
 			clearLog: function() {
 			  document.querySelector('#log').textContent = '';
-			},
+			  },
 			setStatus: function(status) {
 			  document.querySelector('#status').textContent = status;
-			},
+			  },
 			setContent: function(newContent) {
 			  var content = document.querySelector('#content');
 			  while(content.hasChildNodes()) {
 				content.removeChild(content.lastChild);
 			  }
 			  content.appendChild(newContent);
-			}
-		  };
-		</script>
-		
-		
+			  }
+		   };
+	</script>
 		<div id="output" class="output">
 		  <div id="content"></div>
 		  <div id="status"></div>
@@ -483,7 +434,6 @@ window.onclick = function(event) {
 						let Tall = new Uint8Array([Kp], [240]);
 						
 						myCharacteristic.writeValue(Tall);
-						
 					}
 				};
 				
@@ -497,7 +447,6 @@ window.onclick = function(event) {
 						let Tall = new Uint8Array([Ki], [240]);
 						
 						myCharacteristic.writeValue(Tall);
-						
 					}
 				};
 				function sendkd () {
@@ -510,31 +459,24 @@ window.onclick = function(event) {
 						let Tall = new Uint8Array([Kd], [240]);
 						
 						myCharacteristic.writeValue(Tall);
-						
 					}
 				};
-				
-				
-				</script>
-				
+			</script>
 			
-        	
 	<script>
-  document.querySelector('form').addEventListener('submit', function(event) {
-    event.stopPropagation();
-    event.preventDefault();
-    if (!navigator.bluetooth) {
-      ChromeSamples.setStatus('Web Bluetooth API er ikke tilgjengelig.\n' +
-        'Husk å aktivere Web Bluetooth-flagget: chrome://flags');
-    } else {
-      ChromeSamples.clearLog();
-      onFormSubmit();
-    }
-  });
-  log = ChromeSamples.log;
-</script>	
- 
-    
+  		document.querySelector('form').addEventListener('submit', function(event) {
+		 event.stopPropagation();
+    		event.preventDefault();
+    		if (!navigator.bluetooth) {
+		 ChromeSamples.setStatus('Web Bluetooth API er ikke tilgjengelig.\n' +
+		 'Husk å aktivere Web Bluetooth-flagget: chrome://flags');
+		   } else {
+			ChromeSamples.clearLog();
+      			onFormSubmit();
+		 }
+	 });
+  	log = ChromeSamples.log;
+	</script>
     
     </body>
 </html>
