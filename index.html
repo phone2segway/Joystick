@@ -66,66 +66,64 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003d5b', end
     <div>
     	<!-- <center>  x: <span id="xVal"></span><br/></center>
     	// <center>  y: <span id="yVal"></span><br/></center>
-    	// <center>  xprosent: <span id="xP"></span><br/></center>     
-    	// <center>  yprosent: <span id="yP"></span><br/></center>
     	// <center>  Distance: <span id="distance"></span><br/></center>
     	// <center>  Angle: <span id="angle"></span><br/></center>
     	// <center>  Value: <span id="Value"></span><br/></center>
     	// <center>  Turn: <span id="Turn"></span><br/></center>
-    	//  <center>  test: <span id="test"></span><br/></center> -->
+                                                                   can be used to see the values of variables on the website-->
      
     </div>
     
-    <div id="joystickContent">   <!--fjernes?-->
+    <div id="joystickContent">   
     </div>
     
       <script type="text/javascript">
     
-    	var xVal;     // gjør variblene til en globalverdi
-    	var yVal;      // gjør variblene til en globalverdi
-    	var distance;    // gjør variblene til en globalverdi
-    	var angle;        // gjør variblene til en globalverdi
-    	var Turn;
-    	var Value; 
-        var i=true;
-    	var test;
+    	var xVal;       // makes variable xVal a global value
+    	var yVal;       // makes variable yVal a global value
+    	var distance;   // makes variable distance a global value
+    	var angle;      // makes variable angle a global value
+    	var Turn;	// makes variable Turn a global value
+    	var Value; 	// makes variable Value a global value
+        var i=true;	// makes variable i a global value
+    	
     	
         $(document).ready(function(){
-            var joystickView = new JoystickView(300, function(callbackView){     // størelsen på bakre bilde = 300
+            var joystickView = new JoystickView(300, function(callbackView){     // image size = 300
                 $("#joystickContent").append(callbackView.render().el);
                 setTimeout(function(){
                     callbackView.renderSprite();
                 }, 0);
             								    });
             joystickView.bind("verticalMove", function(y){
-                $("#yVal").html(y);        // lager en id og skriver ut verdiene.
+                $("#yVal").html(y);        // create an id and prints values.
                 yVal = Math.floor( y*100); // gjør om yVal verdien til prosent
             	});
             joystickView.bind("horizontalMove", function(x){
-                $("#xVal").html(x);        // lager en id og skriver ut verdiene
+                $("#xVal").html(x);        // create an id and prints values
                	xVal = Math.floor(x*100);   // gjør om xVal verdien til prosent
             	});
             });
         
         $('#joystickContent').on('touchmove mousemove', function() {
         
-        	 if (xVal== null)       // setter xVal = 0 før vi bruker joystick
+        	 if (xVal== null)       //  xVal = 0 before we use the joystick
                 	xVal = 0;
-                 if (yVal== null)        // setter yVal = 0 før vi bruker joystick
+                 if (yVal== null)        // yVal = 0 before we use joystick
                 	yVal = 0;    
                 	
-                distance = Math.round(Math.sqrt ((xVal * xVal) + (yVal * yVal)), 1);   // regner ut avstand fra senter
-                angle = Math.round(Math.acos(xVal / distance)*180/Math.PI, 1);         // regner ut vinkelen
+                distance = Math.round(Math.sqrt ((xVal * xVal) + (yVal * yVal)), 1);   // calculates the distance from the center
+                angle = Math.round(Math.acos(xVal / distance)*180/Math.PI, 1);         // calculates the angle
            	 
            	if(i==true){
            		
            		drive();
            		function drive(){ 
 			'use strict';
-                         test = angle;
+                         
                           
 				if	(myCharacteristic) {
-				// log('> kjører');
+				
 				let Tall = new Uint8Array([Value], [240]);
 					
 						i = false;
@@ -134,9 +132,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003d5b', end
 						}
 					}
 				
-				}; //fjern etterhvert 
+				}; 
             if (yVal < 0)
-                	angle = 360 - angle;                                          // for å få skalaen fra 0 til 360
+                	angle = 360 - angle;                                          // creating the scale from 0 to 360
                 	
            if (angle > 337 && angle <= 360 ){
                  Turn = 1;
@@ -177,25 +175,23 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003d5b', end
               
               	Value = 0;
               	
-        	console.log ('x-verdi: ' + xVal);      // viser xVal på console
-        	console.log('y-verdi: ' + yVal);          // viser yVal på console
+        	console.log ('x-verdi: ' + xVal);      // shows xVal on console for debug
+        	console.log('y-verdi: ' + yVal);       // shows the yVal on console for debug
         	
-        	$('#angle').html(angle);         // Lager id og viser verdiene
-        	$('#distance').html(distance);   // Lager id og viser verdiene
-        	$('#xP').html(xVal + "%");       // Lager id og viser verdiene
-        	$('#yP').html(yVal + "%");       // Lager id og viser verdiene
-        	$('#Turn').html(Turn);
-        	$('#Value').html(Value);
-        	$('#test').html(test);
+        	$('#angle').html(angle);         // create an id and prints value
+        	$('#distance').html(distance);   // create an id and prints value
+        	$('#Turn').html(Turn);		 // create an id and prints value
+        	$('#Value').html(Value);	 // create an id and prints value
+        	$('#test').html(test);           // create an id and prints value
         	
         });
         $('#joystickContent').on('touchend mouseup', function() {
-          // xVal = 0;                      // setter xVal = 0 når vi slipper joystick
-          // yVal = 0;                         // setter yVal = 0 når vi slipper joystick
-          // distance = 0;
-          // angle = 0;
-          // Turn = 0;
-           Value = 0;
+           xVal = 0;                            // set xVal = 0 when we release the joystick
+           yVal = 0;                            // set yVal = 0 when we release the joystick
+           distance = 0;   		        // set distance = 0 when we release the joystick	
+           angle = 0;				// set angle = 0 when we release the joystick
+           Turn = 0;				// set Turn = 0 when we release the joystick
+           Value = 0;				// set Value = 0 when we release the joystick
            
            if(i==true){
            		
@@ -205,9 +201,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003d5b', end
                          test = angle;
                           
 			if	(myCharacteristic) {
-			//	log('> kjører');
 				let Tall = new Uint8Array([Value], [240]);
-						
 					
 						i = false;
 						myCharacteristic.writeValue(Tall)
@@ -217,13 +211,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003d5b', end
 		}
 	      }; 
            
-           $('#angle').html(angle);             // Lager id og viser verdiene
-           $('#distance').html(distance);      // Lager id og viser verdiene
-           $('#xP').html(xVal + "%");         //lager id og henter verdi
-           $('#yP').html(yVal + "%");        //lager id og henter verdi
-           $('#Turn').html(Turn);
-           $('#Value').html(Value);
-           $('#test').html(test);
+           $('#angle').html(angle);             // create an id and prints value
+           $('#distance').html(distance);       // create an id and prints value
+           $('#Turn').html(Turn);		// create an id and prints value
+           $('#Value').html(Value);		// create an id and prints value
+           
         });	
         </script>
     	
@@ -279,9 +271,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003d5b', end
  <div class="w3-container w3-text-shadow" align="center">
     
 <div class="a">	
-     
-     <form id='myform' method='POST' action='#'>                           <!--nytttt -->
-        <input type='button' value='-' class='qtyminus w3-btn w3-round-large w3-border w3-border-blue w3-text-shadow' field='pverdi' />	     <!--  nytt -->
+     <!-- creates a modal for PID-settings-->
+     <form id='myform' method='POST' action='#'>                          
+        <input type='button' value='-' class='qtyminus w3-btn w3-round-large w3-border w3-border-blue w3-text-shadow' field='pverdi' />	     
     	<input type="number" name="pverdi" value="3" min="0" max="9.9" class="w3-large w3-round-large w3-border w3-border-blue"step="0.1" style="width:50px">
     	<input type='button' value='+' class='qtyplus w3-btn w3-round-large w3-border w3-border-blue w3-text-shadow' field='pverdi' /> </form>  
         </div>
@@ -290,20 +282,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003d5b', end
    	</div><br>
    
 <div class="c">	   	
-   <form id='myform' method='POST' action='#'>                             <!--nytt -->
+   <form id='myform' method='POST' action='#'>                             
    	<input type='button' value='-' class='qtyminus w3-btn w3-round-large w3-border w3-border-blue w3-text-shadow' field='iverdi' />
    	<input type="number" name="iverdi" value="3" min="0" max="7.9" class="w3-large w3-round-large w3-border w3-border-blue" style="width:50px">
-   	<input type='button' value='+' class='qtyplus w3-btn w3-round-large w3-border w3-border-blue w3-text-shadow' field='iverdi' />   </form>   <!--nytt-->
+   	<input type='button' value='+' class='qtyplus w3-btn w3-round-large w3-border w3-border-blue w3-text-shadow' field='iverdi' />   </form>   
         </div>
         <div class="d">
         <button id="sendki" onclick="sendki()" class="w3-btn w3-round-large w3-small w3-border w3-border-blue w3-round w3-text-shadow">send I</button>
    	</div><br>
    
 <div class="e">	
-   <form id='myform' method='POST' action='#'>                             <!--nytt -->
-   	<input type='button' value='-' class='qtyminus w3-btn w3-round-large w3-border w3-border-blue w3-text-shadow' field='dverdi' />	     <!--  nytt --> 
+   <form id='myform' method='POST' action='#'>                             
+   	<input type='button' value='-' class='qtyminus w3-btn w3-round-large w3-border w3-border-blue w3-text-shadow' field='dverdi' />	      
    	<input type="number" name="dverdi" value="1" min="0" max="5.5" class="w3-large w3-round-large w3-border w3-border-blue" style="width:50px">
-   	<input type='button' value='+' class='qtyplus w3-btn w3-round-large w3-border w3-border-blue w3-text-shadow' field='dverdi' />  </form>    <!--nytt-->
+   	<input type='button' value='+' class='qtyplus w3-btn w3-round-large w3-border w3-border-blue w3-text-shadow' field='dverdi' />  </form>   
         </div>
         <div class="f">
         <button id="sendkd" onclick="sendkd()" class="w3-btn w3-round-large w3-small w3-border w3-border-blue w3-round w3-text-shadow">send D</button>
@@ -352,9 +344,6 @@ jQuery(document).ready(function(){
     	});
 });                                                           
 
-//nytt
-
-// Get the modal
 var modal = document.getElementById('id01');
 
 // When the user clicks anywhere outside of the modal, close it
@@ -397,7 +386,7 @@ window.onclick = function(event) {
                 <script>
           		var myCharacteristic;
       			
-      			 // Søker etter enheter
+      			 // searching for devices
       			function onFormSubmit() {
 				  'use strict';
 				  let serviceUuid = "6e400001-b5a3-f393-e0a9-e50e24dcca9e";
@@ -408,14 +397,14 @@ window.onclick = function(event) {
 				  if (characteristicUuid.startsWith('0x')) {
 					characteristicUuid = parseInt(characteristicUuid, 16);
 				  }
-				// log('Søker etter enheter med valgt service og characteristic...');
+				// log('searching for devices with selected service and characteristic...');
 				  navigator.bluetooth.requestDevice({filters: [{services: [serviceUuid]}]})
 				  .then(device => device.connectGATT())
 				  .then(server => server.getPrimaryService(serviceUuid))
 				  .then(service => service.getCharacteristic(characteristicUuid))
 				  .then(characteristic => {
 				  		myCharacteristic = characteristic;
-				  	//	log('> Tilkoblet enhet. Segway kan nå styres.');
+				  	//	log('> Devie connected. the robot can be controlled.');
 				  		document.getElementById("connect").innerHTML = "Tilkoblet";
 					})
 				  .catch(error => {
@@ -424,14 +413,13 @@ window.onclick = function(event) {
 				}
 				
 				
-				
 				function sendkp () {
 				  'use strict';
 						
 					var Kpverdi = document.getElementsByName("pverdi")[0].value;
 					var Kp = Kpverdi * 10 + 20;
 					if(myCharacteristic) {
-					//	log('> sender kp!');
+					
 						let Tall = new Uint8Array([Kp], [240]);
 						
 						myCharacteristic.writeValue(Tall);
@@ -444,7 +432,7 @@ window.onclick = function(event) {
 					var Kiverdi = document.getElementsByName("iverdi")[0].value;
 					var Ki = Kiverdi * 10 + 120;
 					if(myCharacteristic) {
-				//		log('> sender ki!');
+				
 						let Tall = new Uint8Array([Ki], [240]);
 						
 						myCharacteristic.writeValue(Tall);
@@ -456,7 +444,7 @@ window.onclick = function(event) {
 					var Kdverdi = document.getElementsByName("dverdi")[0].value;
 					var Kd = Kdverdi * 10 + 156;
 					if(myCharacteristic) {
-					//	log('> sender kd!');
+					
 						let Tall = new Uint8Array([Kd], [240]);
 						
 						myCharacteristic.writeValue(Tall);
