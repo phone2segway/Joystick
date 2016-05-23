@@ -1,2 +1,2 @@
-# Joystick
-jkh
+# Balancing Robot Joystick
+
